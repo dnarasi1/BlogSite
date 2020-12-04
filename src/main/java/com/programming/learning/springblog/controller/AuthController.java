@@ -21,14 +21,15 @@ public class AuthController {
 	
 	@PostMapping("/signup")
 	public ResponseEntity signup(@RequestBody RegisterRequest registerRequest) {
+		System.out.println("qwqwqwqwqwqwqwq");
 		authService.signUp(registerRequest);
 		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	@PostMapping("/login")
-	public ResponseEntity login(@RequestBody LoginRequest loginRequest) {
-		authService.login(loginRequest);
-		return null;
+	public String login(@RequestBody LoginRequest loginRequest) {
+		return authService.login(loginRequest);
+		
 	}
 	
 }
